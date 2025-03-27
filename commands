@@ -60,4 +60,5 @@ hari@Hari:~/Documents/study/github/Lxd-comments$ sudo lxc image list images: | g
 
 4.   lxc launch images:rockylinux/8/amd64 learn    #lxc launch images: <imagename>/<version>/<arch> containername 
 
+5. lxc launch ubuntu:22.04 test    #to launch ubuntu container
 
