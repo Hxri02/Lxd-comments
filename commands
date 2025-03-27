@@ -1,0 +1,63 @@
+1.  lxc image list images:  #list all the container images available in the online.
+
+2.  lxc image list images: | grep -i 'Centos'  
+output:
+
+hari@Hari:~/Documents/study/github/Lxd-comments$ sudo lxc image list images: | grep -i 'Centos'
+| centos/9-Stream (3 more)                 | 8699c6137814 | yes    | CentOS 9-Stream amd64 (20250327_0026)     | x86_64       | CONTAINER       | 115.62MiB  | Mar 27, 2025 at 12:26am (UTC) |
+| centos/9-Stream (3 more)                 | dffa65b2735d | yes    | CentOS 9-Stream amd64 (20250327_0026)     | x86_64       | VIRTUAL-MACHINE | 803.06MiB  | Mar 27, 2025 at 12:26am (UTC) |
+| centos/9-Stream/arm64 (1 more)           | 04117d4def06 | yes    | CentOS 9-Stream arm64 (20250324_0024)     | aarch64      | CONTAINER       | 111.42MiB  | Mar 24, 2025 at 12:24am (UTC) |
+| centos/9-Stream/cloud (1 more)           | 694a48594f30 | yes    | CentOS 9-Stream amd64 (20250327_0026)     | x86_64       | VIRTUAL-MACHINE | 824.75MiB  | Mar 27, 2025 at 12:26am (UTC) |
+| centos/9-Stream/cloud (1 more)           | f33f87b9a093 | yes    | CentOS 9-Stream amd64 (20250327_0026)     | x86_64       | CONTAINER       | 131.93MiB  | Mar 27, 2025 at 12:26am (UTC) |
+| centos/9-Stream/cloud/arm64              | 9db1da98692a | yes    | CentOS 9-Stream arm64 (20250324_0025)     | aarch64      | CONTAINER       | 127.48MiB  | Mar 24, 2025 at 12:25am (UTC) |
+|                                          | 6daa668d7ddd | yes    | CentOS 9-Stream amd64 (20250326_0026)     | x86_64       | VIRTUAL-MACHINE | 824.72MiB  | Mar 26, 2025 at 12:26am (UTC) |
+|                                          | 891d02b76f01 | yes    | CentOS 9-Stream amd64 (20250326_0026)     | x86_64       | CONTAINER       | 115.61MiB  | Mar 26, 2025 at 12:26am (UTC) |
+|                                          | a9d851496c5c | yes    | CentOS 9-Stream amd64 (20250326_0026)     | x86_64       | VIRTUAL-MACHINE | 803.38MiB  | Mar 26, 2025 at 12:26am (UTC) |
+|                                          | dccc3ef46696 | yes    | CentOS 9-Stream amd64 (20250326_0026)     | x86_64       | CONTAINER       | 131.93MiB  | Mar 26, 2025 at 12:26am (UTC) |
+
+
+
+3.   lxc image list images: |awk -F'|' '{ print $2}' |sed '/^[[:space:]]*$/d' |awk -F'/' '{ print $1"/"$2 }' | sort | uniq | grep -E -v 'more|ALIAS'   
+ output:
+ almalinux/8
+ almalinux/9
+ alpine/3.18
+ alpine/3.19
+ alpine/3.20
+ alpine/3.21
+ alpine/edge
+ alt/p11
+ alt/Sisyphus
+ amazonlinux/2023
+ busybox/1.36.1
+ centos/9-Stream
+ debian/11
+ debian/12
+ debian/13
+ debian/sid
+ devuan/chimaera
+ devuan/daedalus
+ fedora/40
+ fedora/41
+ kali/cloud
+ mint/21.3
+ mint/una
+ nixos/24.05
+ nixos/unstable
+ openeuler/24.03
+ opensuse/15.6
+ opensuse/tumbleweed
+ openwrt/23.05
+ openwrt/24.10
+ openwrt/snapshot
+ oracle/8
+ oracle/9
+ rockylinux/8
+ rockylinux/9
+ ubuntu/focal
+ ubuntu/jammy
+ ubuntu/noble
+
+4.   lxc launch images:rockylinux/8/amd64 learn    #lxc launch images: <imagename>/<version>/<arch> containername 
+
+
