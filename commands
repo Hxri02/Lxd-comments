@@ -1,4 +1,6 @@
 1.  lxc image list images:  #list all the container images available in the online.
+    lxc image list    #checks the local downloaded images
+
 
 2.  lxc image list images: | grep -i 'Centos'  
 output:
